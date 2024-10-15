@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/catalog.js" defer></script>
+    <script src="assets/js/accessibility.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">Интернет-магазин</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="cart.html">Корзина</a></li>
+            <li><a href="checkout.html">Оформление заказа</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+        </ul>
+    </nav>
+    <button id="accessibility-toggle">Включить режим доступности</button>
+</header>
+
+<main>
+    <h1>Каталог товаров</h1>
+
+    <div class="filters">
+        <div class="filter">
+            <label for="category">Выберите категорию</label>
+            <select id="category" onchange="filterCatalog()">
+                <option value="">Все</option>
+                <option value="kitchen">Кухня</option>
+                <option value="living">Гостиная</option>
+                <option value="bathroom">Ванная</option>
+            </select>
+        </div>
+
+        <div class="filter">
+            <label for="price-range">Ценовой диапазон</label>
+            <input type="range" id="price-range" min="0" max="20000" value="20000" oninput="filterCatalog()">
+            <div class="price-range">
+                <span>0 руб</span>
+                <span id="price-value">20000 руб</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="catalog" id="catalog"></div>
+</main>
+
+</body>
+</html>
